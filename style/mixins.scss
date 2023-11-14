@@ -1,0 +1,13 @@
+@mixin media-query($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin header-title {
+  font-size: 40px;
+
+  @include media-query(700px) {
+    font-size: 30px;
+  }
+}

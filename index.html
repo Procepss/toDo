@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/index.scss" />
+    <title>TO DO</title>
+  </head>
+  <body>
+    <main class="main">
+      <section class="container">
+        <header class="container__header">
+          <h2 class="container__header-title">Список задач</h2>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            stroke="#000000"
+            class="container__header-icon"
+          >
+            <g stroke-width="0"></g>
+            <g stroke-linecap="round" stroke-linejoin="round"></g>
+            <g>
+              <path
+                d="M11 6L21 6.00072M11 12L21 12.0007M11 18L21 18.0007M3 11.9444L4.53846 13.5L8 10M3 5.94444L4.53846 7.5L8 4M4.5 18H4.51M5 18C5 18.2761 4.77614 18.5 4.5 18.5C4.22386 18.5 4 18.2761 4 18C4 17.7239 4.22386 17.5 4.5 17.5C4.77614 17.5 5 17.7239 5 18Z"
+                stroke="#000000"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </g>
+          </svg>
+        </header>
+        <div class="container__createTask">
+          <input
+            class="container__createTask-input"
+            placeholder="Тут должна быть ваша задача"
+            type="text"
+            maxlength="70"
+          />
+          <button class="container__createTask-btn">Добавить</button>
+        </div>
+        <div class="container__tasks">
+          <ul class="container__tasks-list">
+            <li class="container__tasks-list-none">Задачи отсутсвуют</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

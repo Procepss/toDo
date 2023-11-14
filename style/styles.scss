@@ -1,0 +1,116 @@
+@import "./constants.scss";
+@import "./mixins.scss";
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: $c-main-other;
+  background: $c-main-ios;
+
+  @include media-query(700px) {
+    align-items: normal;
+  }
+}
+
+.container {
+  min-width: 700px;
+  min-height: 600px;
+  border-radius: 25px;
+  background-color: $c-bg-container;
+  padding: 30px;
+
+  @include media-query(700px) {
+    width: 100%;
+    min-width: 0;
+    margin: 20px;
+    min-height: fit-content;
+    max-height: max-content;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__header-title {
+    @include header-title;
+  }
+
+  &__header-icon {
+    width: 60px;
+  }
+
+  &__createTask {
+    display: flex;
+    margin-top: 30px;
+    gap: 15px;
+
+    @include media-query(700px) {
+      flex-direction: column;
+    }
+  }
+
+  &__createTask-input {
+    width: 100%;
+    padding: 20px 30px;
+    border: 1px solid $c-border-input;
+    border-radius: 10px;
+  }
+
+  &__createTask-btn {
+    padding: 20px 30px;
+    border-radius: 10px;
+    font-size: 20px;
+    background: #3e8fff;
+    color: balck;
+  }
+
+  &__tasks-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    margin-top: 30px;
+    gap: 10px;
+  }
+
+  &__tasks-list-item {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid $c-border-input;
+    width: 100%;
+    padding: 20px;
+  }
+
+  &__tasks-list-item-input-edit,
+  &__tasks-list-item-input {
+    background-color: transparent;
+    width: 100%;
+  }
+
+  &__tasks-list-item-btns {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__tasks-list-item-delete,
+  &__tasks-list-item-edit,
+  &__tasks-list-item-done {
+    width: 20px;
+    cursor: pointer;
+  }
+}
+
+.disable-btn {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.done {
+  overflow: hidden;
+  background-color: aqua;
+}
