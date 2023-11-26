@@ -26,9 +26,9 @@ export function createTaskHtml({ element, tasksArray }) {
           : `<input type="text" readonly class="container__tasks-list-item-input" value="${el.value}" />`
       }
       <div class="container__tasks-list-item-btns">
-        <img src="${doneImg}" alt="Выполнено" class="container__tasks-list-item-done" />
-        <img src="${editImg}" alt="Изменить" class="container__tasks-list-item-edit" />
-        <img src="${deleteImg}" alt="Удалить" class="container__tasks-list-item-delete" />
+        <img src="${doneImg}" alt="Выполнено" class=" container__tasks-list-item-btn container__tasks-list-item-done" />
+        <img src="${editImg}" alt="Изменить" class="container__tasks-list-item-btn container__tasks-list-item-edit" />
+        <img src="${deleteImg}" alt="Удалить" class="container__tasks-list-item-btn container__tasks-list-item-delete" />
       </div>
     </li>`;
     })
