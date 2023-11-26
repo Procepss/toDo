@@ -16,6 +16,12 @@ const saveTasks = () =>
     target: tasks,
   });
 
+/** Фунция обновления и сохранения задач */
+function saveAndRefreshTasks() {
+  saveTasks();
+  updateTasks();
+}
+
 /** Функция для загрузки задач из localStorage */
 function loadTasksFromLocalStorage() {
   const storedTasks = localStorage.getItem("tasks");
@@ -29,8 +35,7 @@ function handleClickWithSave({ element, callback }) {
   element.forEach((el, i) => {
     el.addEventListener("click", () => {
       callback(i, el);
-      saveTasks();
-      updateTasks();
+      saveAndRefreshTasks();
     });
   });
 }
@@ -114,8 +119,7 @@ function updateTasks() {
         const taskId = el.dataset.taskId;
         tasks[taskId].value = el.value.trim();
         tasks[taskId].editing = false;
-        saveTasks();
-        updateTasks();
+        saveAndRefreshTasks();
       }
     });
 
@@ -124,8 +128,7 @@ function updateTasks() {
       const taskId = el.dataset.taskId;
       tasks[taskId].value = el.value.trim();
       tasks[taskId].editing = false;
-      saveTasks();
-      updateTasks();
+      saveAndRefreshTasks();
     });
   });
 }
@@ -149,8 +152,7 @@ function createTask() {
     tasks.push(newTask);
     elements.createTaskInput.value = "";
     elements.createTaskBtn.classList.add("disable-btn");
-    saveTasks();
-    updateTasks();
+    saveAndRefreshTasks();
   }
 }
 
